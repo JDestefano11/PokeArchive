@@ -11,7 +11,7 @@ const pokemonList = [
 ]
 
 
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < pokemonList.length; i++) {
     const pokemon = pokemonList[i];
     const message = pokemon.height > 1.7 ? ' - Wow, that\'s big!' : '';
 
