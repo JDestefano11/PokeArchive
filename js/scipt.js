@@ -10,10 +10,12 @@ const pokemonList = [
     { name: 'Blastoise', height: 1.6, types: ['Water'] },
 ]
 
-for (let i = 0; i < 8; i++) { 
-    document.write(pokemonList[i].name  + ' (height:' + pokemonList[i].height +')')
 
-    if (pokemonList[i].height > 1.7) {
-    document.write(' - Wow, that\'s big ' )
-    }
+for (let i = 0; i < 8; i++) {
+    const pokemon = pokemonList[i];
+    const message = pokemon.height > 1.7 ? ' - Wow, that\'s big!' : '';
+
+    document.write(`${pokemon.name} (height: ${pokemon.height})${message}<br>`);
 }
+
+
