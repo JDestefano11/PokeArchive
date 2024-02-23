@@ -1,4 +1,4 @@
-const pokemonList = [
+let pokemonList = [
     { name: 'Bulbasaur', height: 0.7, types: ['Grass', 'Poison'] },
     { name: 'Ivysaur', height: 1, types: ['Grass', 'Poison'] },
     { name: 'Venusaur', height: 2, types: ['Grass', 'Poison'] },
@@ -8,7 +8,8 @@ const pokemonList = [
     { name: 'Squirtle', height: 0.5, types: ['Water'] },
     { name: 'Wartortle', height: 1, types: ['Water'] },
     { name: 'Blastoise', height: 1.6, types: ['Water'] },
-]
+] 
+
 
 
 for (let i = 0; i < pokemonList.length; i++) {
@@ -17,5 +18,6 @@ for (let i = 0; i < pokemonList.length; i++) {
 
     document.write(`${pokemon.name} (height: ${pokemon.height})${message}<br>`);
 }
+
 
 
