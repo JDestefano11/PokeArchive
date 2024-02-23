@@ -8,16 +8,12 @@ let pokemonList = [
     { name: 'Squirtle', height: 0.5, types: ['Water'] },
     { name: 'Wartortle', height: 1, types: ['Water'] },
     { name: 'Blastoise', height: 1.6, types: ['Water'] },
-] 
+];
 
-
-
-for (let i = 0; i < pokemonList.length; i++) {
-    const pokemon = pokemonList[i];
-    const message = pokemon.height > 1.7 ? ' - Wow, that\'s big!' : '';
-
-    document.write(`${pokemon.name} (height: ${pokemon.height})${message}<br>`);
+function printPokemonDetails(pokemon) { 
+    console.log(pokemon.name + '  Height: ' + pokemon.height + '  Types: ' + pokemon.types.join(', '));
 }
+pokemonList.forEach(printPokemonDetails); 
 
 
 
