@@ -30,6 +30,12 @@ let pokemonRepository = (function () {
         }
     }
 
+    // Shows pokemon details
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    }
+
+
     // Adds a list item for a pokemon to the pokemonListItems
     function addListItem(pokemon) {
         let pokemonListItems = document.querySelector('.pokemon-list');
@@ -39,14 +45,21 @@ let pokemonRepository = (function () {
         button.classList.add('pokemon-button');
         listItem.appendChild(button);
         pokemonListItems.appendChild(listItem);
+
+        // Add event listener to the button
+        button.addEventListener('click', function () {
+            showDetails(pokemon);
+        });
     }
 
     return {
         getAll: getAll,
         add: add,
         printPokemonDetails: printPokemonDetails,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showDetails: showDetails
     };
+
 
     // IFIE
 })();
@@ -54,4 +67,8 @@ let pokemonRepository = (function () {
 pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
 });
+
+
+
+
 
