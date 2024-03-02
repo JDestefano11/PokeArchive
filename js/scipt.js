@@ -16,7 +16,7 @@ let pokemonRepository = (function () {
 
     // Adds a pokemon to the pokemonList 
     function add(pokemon) {
-        if (typeof pokemon === 'object' && 'name' in pokemon && 'height' in pokemon && 'types' in pokemon) {
+        if (typeof pokemon === 'object' && 'name' in pokemon && 'detailsUrl' in pokemon) {
             pokemonList.push(pokemon);
         } else {
             console.error('Invalid pokemon object');
@@ -25,9 +25,10 @@ let pokemonRepository = (function () {
 
     // Shows pokemon details
     function showDetails(pokemon) {
-        console.log(pokemon);
+        pokemonRepository.loadDetails(pokemon).then(function () {
+            console.log(pokemon);
+        });
     }
-
 
     // Adds a list item for a pokemon to the pokemonListItems
     function addListItem(pokemon) {
@@ -97,13 +98,7 @@ let pokemonRepository = (function () {
 
 pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
-        pokemonRepository.loadDetails(pokemon).then(function () {
-            pokemonRepository.addListItem(pokemon);
-        });
+        pokemonRepository.addListItem(pokemon);
     });
 });
-
-
-
-
 
